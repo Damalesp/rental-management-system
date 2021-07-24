@@ -17,6 +17,7 @@
       "dom"
     ]
   },
+  "strict": false,
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
   }

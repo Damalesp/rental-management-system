@@ -7,16 +7,16 @@ import { LocationbranchesComponent } from './locationbranches/locationbranches.c
 
 const routes: Routes = [
   {
-    path: 'dashboard', component: DashboradComponent
+    path: 'dashboard', component: DashboradComponent, data: { title: 'dashboard' }
   },
   {
-    path: 'locations', component:LocationbranchesComponent
+    path: 'locations', component: LocationbranchesComponent, data: { title: 'locations' }
   },
   {
-    path: 'category', component: CategoryComponent
+    path: 'category', component: CategoryComponent, data: { title: 'category' }
   },
   {
-    path: 'subcategory',component:CategorydetailsComponent
+    path: 'subcategory', component: CategorydetailsComponent, data: { title: 'subcategory' }
   },
   {
     path: '**', redirectTo: 'dashboard', pathMatch: 'full'

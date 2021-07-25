@@ -10,13 +10,17 @@ import { DashboradComponent } from './dashborad/dashborad.component';
 import { CategoryComponent } from './category/category.component';
 import { CategorydetailsComponent } from './category/categorydetails/categorydetails.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NestedmenuComponent } from './nestedmenu/nestedmenu.component';
+import { LocationbranchesComponent } from './locationbranches/locationbranches.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboradComponent,
     CategoryComponent,
-    CategorydetailsComponent
+    CategorydetailsComponent,
+    NestedmenuComponent,
+    LocationbranchesComponent
   ],
   imports: [
     BrowserModule,

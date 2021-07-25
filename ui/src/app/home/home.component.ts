@@ -16,11 +16,12 @@ export class HomeComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-
+ 
   constructor(private breakpointObserver: BreakpointObserver) { }
 
 
   ngOnInit(): void {
+  
   }
 
 }

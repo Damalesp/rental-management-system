@@ -4,9 +4,15 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar > <mat-icon aria-label="icon">account_circle</mat-icon>&nbsp; Manage Profile</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Dashboard</a>
-      <a mat-list-item [routerLink]="['/category']" routerLinkActive="router-link-active" >Location</a>
+    <mat-nav-list class="container">
+      <!-- <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Dashboard</a> -->
+      <!-- <a mat-list-item [routerLink]="['/category']" routerLinkActive="router-link-active" >Location</a> -->
+      <!-- <mat-form-field>
+        <mat-select [formControl]="selectedCountryControl" placeholder="Select Location">
+          <mat-option *ngFor="let item of categoryData" [value]="item">{{item.name}}</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <app-nestedmenu></app-nestedmenu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

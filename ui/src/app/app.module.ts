@@ -12,6 +12,7 @@ import { CategorydetailsComponent } from './category/categorydetails/categorydet
 import { HttpClientModule } from '@angular/common/http';
 import { NestedmenuComponent } from './nestedmenu/nestedmenu.component';
 import { LocationbranchesComponent } from './locationbranches/locationbranches.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { LocationbranchesComponent } from './locationbranches/locationbranches.c
     CategoryComponent,
     CategorydetailsComponent,
     NestedmenuComponent,
-    LocationbranchesComponent
+    LocationbranchesComponent,
+    BreadcrumbsComponent
   ],
   imports: [
     BrowserModule,

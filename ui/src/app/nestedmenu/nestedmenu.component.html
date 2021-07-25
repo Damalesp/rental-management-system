@@ -1,5 +1,5 @@
 <mat-form-field class="dropdown">
-    <mat-select #mySelect [(ngModel)]="selectedClassification" [disabled]="true" [matMenuTriggerFor]="levelOne"
+    <mat-select #mySelect [(ngModel)]="selectedItem" [disabled]="true" [matMenuTriggerFor]="levelOne"
         #levelOneTrigger="matMenuTrigger" (click)="levelOneTrigger.openMenu()" placeholder="Select Locations">
         <mat-option *ngFor="let category of catalogData" [value]="category">{{category}}</mat-option>
     </mat-select>
@@ -21,14 +21,14 @@
                         <ng-container *ngFor="let child3 of child2.categories">
                             <button mat-menu-item [matMenuTriggerFor]="levelFour" [value]="child3.name"
                                 (click)="onCategorySelected($event)"
-                                [ngClass]="{'selectedMenu': child3.name === selectedClassification}">
+                                [ngClass]="{'selectedMenu': child3.name === selectedItem}">
                                 {{child3.name}}
                             </button>
                             <mat-menu #levelFour="matMenu">
                                 <ng-container *ngFor="let child4 of child3.subcategories">
                                     <button mat-menu-item [value]="child4.name"
                                         (click)="onSubCategoriesSelected($event)"
-                                        [ngClass]="{'selectedMenu': child4.name === selectedClassification}">
+                                        [ngClass]="{'selectedMenu': child4.name === selectedItem}">
                                         {{child4.name}}
                                     </button>
                                 </ng-container>

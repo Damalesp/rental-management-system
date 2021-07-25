@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
+import { CategorydetailsComponent } from './category/categorydetails/categorydetails.component';
 import { DashboradComponent } from './dashborad/dashborad.component';
-import { HomeComponent } from './home/home.component';
+import { LocationbranchesComponent } from './locationbranches/locationbranches.component';
 
 const routes: Routes = [
   {
     path: 'dashboard', component: DashboradComponent
   },
   {
-    path: 'category' , component: CategoryComponent
+    path: 'locations', component:LocationbranchesComponent
   },
- {
+  {
+    path: 'category', component: CategoryComponent
+  },
+  {
+    path: 'subcategory',component:CategorydetailsComponent
+  },
+  {
     path: '**', redirectTo: 'dashboard', pathMatch: 'full'
   }
 ];

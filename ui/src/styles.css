@@ -5,3 +5,31 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:host {
+  display: block;
+  padding: 48px;
+}
+
+section:not(:last-of-type) {
+  margin-bottom: 24px;
+}
+
+.darts-dark-theme{
+    float: left;
+}
+.example-card {
+  width: 300px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+mat-card.mat-card {
+  border-radius: rem-calc(8);
+  overflow: hidden;
+}
+
+.mat-card.mat-card{
+box-shadow: 2px 5px 5px darkgrey;
+}

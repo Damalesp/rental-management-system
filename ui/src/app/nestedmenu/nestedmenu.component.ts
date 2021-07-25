@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -10,37 +11,41 @@ import { ServiceService } from '../service.service';
 })
 export class NestedmenuComponent implements OnInit {
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService, private route: Router) { }
   selectedCountryControl = new FormControl();
   catalogData: any = [];
   public classifications: string[] = [];
-  public selectedClassification: any;
+  public selectedItem: any;
 
   ngOnInit(): void {
     this.service.getJSON().subscribe(response => {
       if (response) {
         this.catalogData = response.data.locations;
       }
-      console.log(this.catalogData);
     });
   }
 
-  public onSelectedLocation(data: any) {
-    console.log("selected location", data)
-  }
-
   public onBranchesSelected(data: any) {
-    this.selectedClassification = data.srcElement.value.toString();
-    console.log("Selected branch", this.selectedClassification)
+    this.selectedItem = data.srcElement.value.toString();
+    if (this.selectedItem) {
+      this.service.changeSelected(this.selectedItem);
+      this.route.navigate(['/locations']);
+    }
   }
 
   public onCategorySelected(data: any) {
-    this.selectedClassification = data.srcElement.value.toString();
-    console.log("selected category", this.selectedClassification)
+    this.selectedItem = data.srcElement.value.toString();
+    if (this.selectedItem) {
+      this.service.changeSelected(this.selectedItem);
+      this.route.navigate(['/category']);
+    }
   }
 
   public onSubCategoriesSelected(data: any): void {
-    this.selectedClassification = data.srcElement.value.toString();
-    console.log("selected subcategories", this.selectedClassification)
+    this.selectedItem = data.srcElement.value.toString();
+    if (this.selectedItem) {
+      this.service.changeSelected(this.selectedItem);
+      this.route.navigate(['/subcategory']);
+    }
   }
 }
